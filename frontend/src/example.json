@@ -1,7 +1,7 @@
 [
     {
         "id_restaurant":1,
-        "name_res":"Noodle bar 9",
+        "name_res":"rest1",
         "address": "Merikoskenkatu 9",
         "time_open": "10:00",
         "time_close":"20:00",
@@ -9,31 +9,31 @@
     },
     {
         "id_restaurant":2,
-        "name_res":"Oulun Pikku Thai ravintola",
+        "name_res":"rest2",
         "address": "Asemakatu 29",
-        "time_open": "10:30",
+        "time_open": "16:30",
         "time_close":"20:00",
         "type":"Thai"
     },
     {
         "id_restaurant":1,
-        "name_res":"Noodle bar 9",
+        "name_res":"rest3",
         "address": "Merikoskenkatu 9",
-        "time_open": "10:00",
+        "time_open": "16:00",
         "time_close":"20:00",
         "type":"Noodle"
     },
     {
         "id_restaurant":2,
-        "name_res":"Oulun Pikku Thai ravintola",
+        "name_res":"rest4",
         "address": "Asemakatu 29",
         "time_open": "10:30",
-        "time_close":"20:00",
+        "time_close":"16:00",
         "type":"Thai"
     },
     {
         "id_restaurant":1,
-        "name_res":"Noodle bar 9",
+        "name_res":"rest5",
         "address": "Merikoskenkatu 9",
         "time_open": "10:00",
         "time_close":"20:00",
@@ -41,7 +41,7 @@
     },
     {
         "id_restaurant":2,
-        "name_res":"Oulun Pikku Thai ravintola",
+        "name_res":"rest6",
         "address": "Asemakatu 29",
         "time_open": "10:30",
         "time_close":"20:00",
