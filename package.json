@@ -1,0 +1,22 @@
+{
+  "name": "din19sp_advanced_project",
+  "version": "1.0.0",
+  "description": "localhostess3000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latehuov/din19sp_advanced_project.git"
+  },
+  "author": "Nabeel Hussain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/latehuov/din19sp_advanced_project/issues"
+  },
+  "homepage": "https://github.com/latehuov/din19sp_advanced_project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
