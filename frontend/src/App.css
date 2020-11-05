@@ -1,0 +1,20 @@
+.mainDisplay{
+  width: 95%;
+  height: 1050px;
+  margin: auto;
+  background-color: gray;
+
+}
+
+.theTitle{
+  margin: auto;
+  text-align: center;
+}
+
+#Noelle {
+  width:500px;
+  float:right;
+}
+
+
+
