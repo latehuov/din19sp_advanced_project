@@ -1,10 +1,10 @@
 var db = require('../db');
 var restaurants = {
     get: function (callback) {
-        return db.query('select * from restaurants order by id desc', callback);
+        return db.query('select * from public.restaurants order by id_restaurant desc', callback);
     },
     getById: function (id, callback) {
-        return db.query('select * from restaurants where id=$1', [id], callback);
+        return db.query('select * from public.restaurants where id_restaurant=$1', [id], callback);
     },
     add: function (name_res, callback) {
         console.log(name_res);
