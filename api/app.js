@@ -6,8 +6,18 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var restaurantsRouter = require('./routes/restaurants');
+
+var cors = require('cors');
+const helmet = require('helmet');
 
 var app = express();
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use('/restaurants', restaurantsRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
