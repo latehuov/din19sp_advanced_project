@@ -7,17 +7,20 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
+var commentsRouter = require('./routes/comments');
 
 var cors = require('cors');
 const helmet = require('helmet');
 
 var app = express();
 
+app.use(cors());
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/restaurants', restaurantsRouter);
+app.use('/comments', commentsRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
