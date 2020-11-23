@@ -9,8 +9,8 @@ var comments = {
     add: function (name_res, callback) {
         console.log(name_res);
         return db.query(
-            'insert into public.comments(parent, children, comment) values($1,$2,$3)',
-            [comments.parent, comments.children, comments.comment],
+            'insert into public.comments(id_restaurant, parent, children, comment) values($1,$2,$3,$4)',
+            [comments.id_restaurant, comments.parent, comments.children, comments.comment],
             callback
         );
     },
