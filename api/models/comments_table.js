@@ -4,7 +4,7 @@ var comments = {
         return db.query('select * from public.comments order by id_comments desc', callback);
     },
     getById: function (id, callback) {
-        return db.query('select * from public.comments where id_restaurant=$2', [id], callback);
+        return db.query('select * from public.comments where id_restaurant=$1', [id], callback);
     },
     add: function (name_res, callback) {
         console.log(name_res);
