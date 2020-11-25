@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
 import DBdisplay from './Components/DBdisplay';
-
+import axios from 'axios';
 
 let fakeData = require('./example.json')
 
@@ -12,6 +11,17 @@ class App extends Component {
     this.state = {
       data: fakeData
     }
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:4000/restaurants')
+
+      .then((response) => {
+        
+        console.log(response)
+        if(response.restaurants) this.setState({ data: response.restaurants })
+        
+      });
   }
 
   render() {
