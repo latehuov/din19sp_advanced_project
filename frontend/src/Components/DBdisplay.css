@@ -5,8 +5,11 @@ table{
     border-collapse: collapse;
     width:64%;
     margin-left: 10px;
+    background-color: rgb(126, 0, 38);
+    color: honeydew;
 }
 
-tr{
-    border: black solid 2px;
+td, tr{
+    border-bottom: gray solid 2px;
+    padding: 5px;
 }
