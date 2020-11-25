@@ -8,7 +8,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
 var commentsRouter = require('./routes/comments');
-var port = 4000;
 
 var cors = require('cors');
 const helmet = require('helmet');
