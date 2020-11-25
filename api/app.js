@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const port = 4000;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
@@ -51,4 +51,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
+
+app.listen(port, () => {
+  console.log(`example app listenint at port http://localhost:${port}`)
+})
 module.exports = app;
