@@ -25,3 +25,7 @@ td, tr{
     display: inline-block;
     border: black solid 1px;
 }
+
+.restDescription{
+    display: none;
+}

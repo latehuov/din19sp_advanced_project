@@ -1,47 +1,16 @@
 import React, { Component } from 'react'
 import styles from './DBdisplay.css'
-
-var today = new Date()
-var hours = today.getHours()
-var minutes = today.getMinutes()
-
-function checkIfOpen(open, close) {
-    let openHours = open.substring(0, 2)
-    parseInt(openHours)
-    let closeHours = close.substring(0, 2)
-    parseInt(closeHours)
-    if (openHours < hours && hours < closeHours) {
-        return "open"
-    }
-    else if (openHours == hours) {
-        let openMinutes = open.substring(3, 5)
-        parseInt(openMinutes)
-        console.log(openMinutes, minutes)
-        if (openMinutes < minutes) {
-            return "open"
-        }
-        else if (openMinutes > minutes) {
-            return "closed"
-        }
-    }
-    else if (closeHours == hours) {
-        let closeMinutes = close.substring(3, 5)
-        parseInt(closeMinutes)
-        if (closeMinutes > minutes) {
-            return "open"
-        }
-        else {
-            return "closed"
-        }
-    }
-    else if (openHours < hours && hours > closeHours) {
-        return "closed"
-    }
-}
+import DBline from "./DBline.js"
 
 
 
 export default class DBdisplay extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+           
+        }
+      }
 
     search = (event) => {
         this.props.setSearchResult(event.target.value)
@@ -59,18 +28,20 @@ export default class DBdisplay extends Component {
         }
     }
 
+
+
     render() {
+        
+        
         return (
+            
             <div className={styles.dataBox}>
                 <input type="text" onChange={this.search}></input>
                 
                     {
                         this.props.SearchResult.map(item =>
-                         <div class="a1">
-                            <p class="restInfo">{item.name_res}</p>
-                            <p class="restInfo">{item.address}</p>
-                            <p class="restInfo">{checkIfOpen(item.time_open, item.time_close)}</p>
-                        </div>)
+                            <DBline item={item}/>
+                        )
                     }
 
             </div>
