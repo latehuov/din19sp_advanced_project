@@ -1,0 +1,67 @@
+create database localhostess3000;
+
+create role dbaccess with LOGIN password 'youshallnotpass!';
+
+create table public.restaurants(
+	id_restaurant serial primary key,
+	name_res varchar(255),
+	address varchar(255),
+	time_open varchar(255),
+	time_close varchar(255),
+	type_res varchar(255)
+);
+
+grant usage on schema public to dbaccess;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to dbaccess;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public  TO dbaccess;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO dbaccess;
+
+
+
+insert into public.restaurants (name_res, address, time_open, time_close, type_res)
+values
+('Noodlebar 9', 'Merikoskenkatu 9', '10:00', '20:00', 'Noodles'),
+('Oulun Pikku Thai Ravintola', 'Asemakatu 29', '10:30', '20:00', 'Thai'),
+('Oulun Kathmandu', 'Pakkahuoneenkatu 8', '10:30', '21:00', 'Indian'),
+('Grill Swing', 'Valtatie 21', '10:30', '22:00', 'Grill'),
+('Pikkelssi', 'Iskontie 3', '08:00', '14:00', 'Buffet'),
+('Crecian', 'Kirkkokatu 55', '11:00', '21:00', 'Greek'),
+('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian'),
+('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food'),
+('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger'),
+('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi');
+
+--------------------------------------------------------------------------------
+
+create table public.comments(
+	id_comment serial primary key,
+	id_restaurant INT,
+	parent varchar(255),
+	children varchar(255),
+	comment varchar(255)
+);
+
+
+insert comments with
+
+insert into public.comments(id_restaurant, parent, children, comment)
+values(id_restaurant, parent of parent / NULL , NULL , comment);
+
+if child commet do also 
+
+update public.comments 
+set children = children || ', ' || id_of_new_comment
+where id_comment = id_of_parent
+
+
+insert into public.comments(id_restaurant, parent, children, comment)
+values(1 , NULL ,'2, 3' , 'perkele'),
+(1 , 1 , NULL , 'No'),
+(1 , 1 , '5' , 'Never'),
+(1 , NULL , NULL , 'meh'),
+(1 , 3 , '7' , 'perkele'),
+(1 , NULL , NULL , 'Hello'),
+(1 ,  5, NULL , 'nope');
+
+
+---------------------------------------------------------------------------
