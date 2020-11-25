@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
 var commentsRouter = require('./routes/comments');
+var port = 4000;
 
 var cors = require('cors');
 const helmet = require('helmet');
@@ -50,5 +51,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.listen(port, () => {
+  console.log(`example app listenint at port http://localhost:${port}`)
+})
 
 module.exports = app;
