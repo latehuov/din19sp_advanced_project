@@ -61,17 +61,17 @@ export default class DBdisplay extends Component {
 
     render() {
         return (
-            <div class={styles.dataBox}>
+            <div className={styles.dataBox}>
                 <input type="text" onChange={this.search}></input>
-                <table>
+                
                     {
-                        this.props.SearchResult.map(item => <tr class={styles.aRow}>
-                            <td>{item.name_res}</td>
-                            <td>{item.address}</td>
-                            <td>{checkIfOpen(item.time_open, item.time_close)}</td>
-                        </tr>)
+                        this.props.SearchResult.map(item =>
+                         <div class="a1">
+                            <p class="restInfo">{item.name_res}</p>
+                            <p class="restInfo">{item.address}</p>
+                            <p class="restInfo">{checkIfOpen(item.time_open, item.time_close)}</p>
+                        </div>)
                     }
-                </table>
 
             </div>
         )

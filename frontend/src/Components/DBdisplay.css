@@ -13,3 +13,15 @@ td, tr{
     border-bottom: gray solid 2px;
     padding: 5px;
 }
+
+
+.a1{
+    width: 65%;
+    background-color: gray;
+    border: solid black 2px;
+}
+
+.restInfo{
+    display: inline-block;
+    border: black solid 1px;
+}
