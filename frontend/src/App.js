@@ -9,18 +9,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: fakeData
+      data: fakeData,
+      SearchResult: fakeData
     }
+  }
+
+  setSearchResult = (value) => {
+    this.setState({SearchResult: value})
   }
 
   componentDidMount() {
     axios.get('http://localhost:4000/restaurants')
 
       .then((response) => {
-        
+
         console.log(response)
-        if(response.restaurants) this.setState({ data: response.restaurants })
-        
+        if (response.data) {
+          this.setState({ data: response.data })
+          this.setState({ SearchResult : response.data})
+        }
       });
   }
 
@@ -32,7 +39,7 @@ class App extends Component {
           <img id="Noelle" src="https://owwya.com/wp-content/uploads/2020/10/Genshin-Impact-Noelle.png"></img>
         </div>
         <br></br>
-        <DBdisplay data={this.state.data}/>
+        <DBdisplay data={this.state.data} setSearchResult={this.setSearchResult} SearchResult={this.state.SearchResult}/>
       </div>
     )
   }
