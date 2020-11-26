@@ -35,7 +35,7 @@ values
 
 --------------
 alter table restaurants 
-add column desc_rest;
+add column desc_rest varchar(255);
 
 update restaurants
 set desc_rest = 'A nice place to have authenticish noodles' where id_restaurant = 1;
