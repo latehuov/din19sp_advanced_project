@@ -7,28 +7,23 @@
     position: relative;
 }
 
-td, tr{
-    border-bottom: gray solid 2px;
-    margin: 10px;
-}
-
-
 .a1 {
+	display: grid;
+	grid-template-columns: 250px 160px 160px 150px;
+	justify-content: left;
 	width: 65%;
 	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, white);
 	/* border: solid black 2px; */
 	border-radius: 5px;
-	margin: 10px;
-    column-count: 4;
 }
 
-.restInfo{
-    display: inline-block;
-    border-collapse: unset;
+.a1 > .restInfo{
+    text-align: center;
     color: ivory;
-    margin: 10px 100px 10px 5px;
+    margin: 10px;
 }
 
 .restDescription{
     display: none;
 }
+
