@@ -1,29 +1,32 @@
 .dataBox{
     width: 70%;
 }
-table{
-    border-collapse: collapse;
-    width:64%;
-    margin-left: 10px;
-    background-color: rgb(126, 0, 38);
-    color: honeydew;
+
+#searchbox{
+    width: 10%;
+    position: relative;
 }
 
 td, tr{
     border-bottom: gray solid 2px;
-    padding: 5px;
+    margin: 10px;
 }
 
 
-.a1{
-    width: 65%;
-    background-color: gray;
-    border: solid black 2px;
+.a1 {
+	width: 65%;
+	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, white);
+	/* border: solid black 2px; */
+	border-radius: 5px;
+	margin: 10px;
+    column-count: 4;
 }
 
 .restInfo{
     display: inline-block;
-    border: black solid 1px;
+    border-collapse: unset;
+    color: ivory;
+    margin: 10px 100px 10px 5px;
 }
 
 .restDescription{
