@@ -24,8 +24,6 @@ class App extends Component {
     axios.get('http://localhost:4000/restaurants')
 
       .then((response) => {
-
-        console.log(response)
         if (response.data) {
           this.setState({ data: response.data })
           this.setState({ SearchResult : response.data})

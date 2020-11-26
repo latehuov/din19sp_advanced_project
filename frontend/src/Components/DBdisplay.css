@@ -22,3 +22,7 @@ td, tr{
     color: honeydew;
     margin: 10px 100px 10px 5px;
 }
+
+.restDescription{
+    display: none;
+}
