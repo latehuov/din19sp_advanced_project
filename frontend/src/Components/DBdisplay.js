@@ -37,7 +37,7 @@ export default class DBdisplay extends Component {
             
             <div className={styles.dataBox}>
                 <div id="searchbox">
-                    <span>Search:</span><input type="text" onChange={this.search}></input>
+                    <span>Search:</span><input id="searchInput" type="text" onChange={this.search}></input>
                 </div>
                 
                     {
