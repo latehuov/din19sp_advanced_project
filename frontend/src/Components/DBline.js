@@ -66,9 +66,10 @@ export default class DBline extends Component {
             <div class="a1" onClick={()=>this.handleClick()}>
                 <p class="restInfo">{this.props.item.name_res}</p>
                 <p class="restInfo">{this.props.item.address}</p>
+                <p class="restInfo">{this.props.item.type_res}</p>
                 <p class="restInfo">{checkIfOpen(this.props.item.time_open, this.props.item.time_close)}</p>
                 {
-                    this.state.displayInfo == true && <p id={this.props.item.id_restaurant} >{this.props.item.type_res}</p>
+                    this.state.displayInfo == true && <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
                 }
             </div>
         )
