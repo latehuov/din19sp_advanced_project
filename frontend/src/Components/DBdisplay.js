@@ -20,7 +20,7 @@ export default class DBdisplay extends Component {
         else{
             let array = []
             this.props.data.map((item)=> {
-                if(item.name_res.includes(event.target.value) || item.address.includes(event.target.value)  ){
+                if(item.name_res.toLowerCase().includes(event.target.value.toLowerCase()) || item.address.toLowerCase().includes(event.target.value.toLowerCase())  ){
                    array.push(item) 
                 }
             })
