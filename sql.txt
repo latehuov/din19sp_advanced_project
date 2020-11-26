@@ -34,7 +34,7 @@ values
 
 
 --------------
-atler table restaurants 
+alter table restaurants 
 add column desc_rest;
 
 update restaurants
