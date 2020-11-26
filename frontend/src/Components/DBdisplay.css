@@ -2,24 +2,30 @@
     width: 70%;
 }
 
+#searchbox{
+    width: 10%;
+    position: relative;
+}
+
 td, tr{
     border-bottom: gray solid 2px;
     margin: 10px;
 }
 
 
-.a1{
-    width: 65%;
-    background-color: rgb(129, 0, 39);
-    border: solid black 2px;
-    border-radius: 5px;
-    margin: 10px;
+.a1 {
+	width: 65%;
+	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, white);
+	/* border: solid black 2px; */
+	border-radius: 5px;
+	margin: 10px;
+    column-count: 4;
 }
 
 .restInfo{
     display: inline-block;
     border-collapse: unset;
-    color: honeydew;
+    color: ivory;
     margin: 10px 100px 10px 5px;
 }
 
