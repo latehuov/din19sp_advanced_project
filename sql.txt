@@ -8,7 +8,8 @@ create table public.restaurants(
 	address varchar(255),
 	time_open varchar(255),
 	time_close varchar(255),
-	type_res varchar(255)
+	type_res varchar(255),
+	desc_rest varchar(255)
 );
 
 grant usage on schema public to dbaccess;
@@ -18,18 +19,45 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO dbaccess;
 
 
 
-insert into public.restaurants (name_res, address, time_open, time_close, type_res)
+insert into public.restaurants (name_res, address, time_open, time_close, type_res, desc_rest)
 values
-('Noodlebar 9', 'Merikoskenkatu 9', '10:00', '20:00', 'Noodles'),
-('Oulun Pikku Thai Ravintola', 'Asemakatu 29', '10:30', '20:00', 'Thai'),
-('Oulun Kathmandu', 'Pakkahuoneenkatu 8', '10:30', '21:00', 'Indian'),
-('Grill Swing', 'Valtatie 21', '10:30', '22:00', 'Grill'),
-('Pikkelssi', 'Iskontie 3', '08:00', '14:00', 'Buffet'),
-('Crecian', 'Kirkkokatu 55', '11:00', '21:00', 'Greek'),
-('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian'),
-('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food'),
-('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger'),
-('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi');
+('Noodlebar 9', 'Merikoskenkatu 9', '10:00', '20:00', 'Noodles', 'A nice place to have authenticish noodles'),
+('Oulun Pikku Thai Ravintola', 'Asemakatu 29', '10:30', '20:00', 'Thai', 'A nice thai restaurant with sweet and spicy foods, beware the coconut milk' ),
+('Oulun Kathmandu', 'Pakkahuoneenkatu 8', '10:30', '21:00', 'Indian', 'Just about what you would expect from an indian place'),
+('Grill Swing', 'Valtatie 21', '10:30', '22:00', 'Grill', 'All the grill classics are available, and some store specialities as well'),
+('Pikkelssi', 'Iskontie 3', '08:00', '14:00', 'Buffet', 'A typical finnish diner, a buffet and drinks'),
+('Crecian', 'Kirkkokatu 55', '11:00', '21:00', 'Greek', 'The music is nice and the feta is everywhere'),
+('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian', 'An italian diner, dont you dare try to put ketchup on anything or may god help you'),
+('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food', 'A small place with big burgers and expensive beer'),
+('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger', 'All the pizza and kebab you could ever want to eat from this place'),
+('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi', 'Dont really know, never eaten bangladeshi food before');
+
+
+--------------
+atler table restaurants 
+add column desc_rest;
+
+update restaurants
+set desc_rest = 'A nice place to have authenticish noodles' where id_restaurant = 1;
+update restaurants
+set desc_rest = 'A nice thai restaurant with sweet and spicy foods, beware the coconut milk' where id_restaurant = 2;
+update restaurants
+set desc_rest = 'Just about what you would expect from an indian place' where id_restaurant = 3;
+update restaurants
+set desc_rest = 'All the grill classics are available, and some store specialities as well' where id_restaurant = 4;
+update restaurants
+set desc_rest = 'A typical finnish diner, a buffet and drinks' where id_restaurant = 5;
+update restaurants
+set desc_rest = 'The music is nice and the feta is everywhere' where id_restaurant = 6;
+update restaurants
+set desc_rest = 'An italian diner, dont you dare try to put ketchup on anything or may god help you' where id_restaurant = 7;
+update restaurants
+set desc_rest = 'A small place with big burgers and expensive beer' where id_restaurant = 8;
+update restaurants
+set desc_rest = 'All the pizza and kebab you could ever want to eat from this place' where id_restaurant = 9;
+update restaurants
+set desc_rest = 'Dont really know, never eaten bangladeshi food before' where id_restaurant = 10;
+
 
 --------------------------------------------------------------------------------
 
@@ -65,3 +93,5 @@ values(1 , NULL ,'2, 3' , 'perkele'),
 
 
 ---------------------------------------------------------------------------
+
+
