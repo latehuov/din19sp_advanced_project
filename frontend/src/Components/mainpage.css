@@ -1,4 +1,6 @@
 .header{
 height: 50px;
-background: gray;
+background: rgb(129, 0, 39);
+color: ivory;
+border-radius: 0 0 5px 0;
 }

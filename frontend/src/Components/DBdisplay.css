@@ -9,13 +9,13 @@
   padding-top: 10px;
 	background-color: rgb(129, 0, 39);
 	color: ivory;
-	border-radius: 5px 5px 0 0;
-	top: 3px;
+	border-radius: 0 0 5px 5px;
 	height: 40px;
+	bottom: 21px;
 }
 
 #searchInput {
-    padding-left: 10px;
+		margin: auto;
 }
 
 .a1 {
