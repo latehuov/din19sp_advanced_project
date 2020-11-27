@@ -24,7 +24,7 @@
 	justify-content: left;
     width: 65%;
     margin-bottom: 10px;
-	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, white);
+	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, rgb(255, 60, 0), rgb(255, 240, 106));
 	/* border: solid black 2px; */
 	border-radius: 5px;
 }
