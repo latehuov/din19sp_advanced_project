@@ -48,28 +48,32 @@ export default class DBline extends Component {
         }
     }
 
-    setDisplayInfo = (value) =>{
-        this.setState({displayInfo: value})
+    setDisplayInfo = (value) => {
+        this.setState({ displayInfo: value })
     }
 
-    handleClick = () =>{
-        if(this.state.displayInfo == false){ 
+    handleClick = () => {
+        if (this.state.displayInfo == false) {
             this.setDisplayInfo(true)
         }
-        else if(this.state.displayInfo == true){ 
+        else if (this.state.displayInfo == true) {
             this.setDisplayInfo(false)
         }
     }
 
     render() {
         return (
-            <div class="a1" onClick={()=>this.handleClick()}>
+            <div class="a1" onClick={() => this.handleClick()}>
                 <p class="restInfo">{this.props.item.name_res}</p>
                 <p class="restInfo">{this.props.item.address}</p>
                 <p class="restInfo">{this.props.item.type_res}</p>
                 <p class="restInfo">{checkIfOpen(this.props.item.time_open, this.props.item.time_close)}</p>
                 {
-                    this.state.displayInfo == true && <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
+                    this.state.displayInfo == true &&
+                    <div>
+                        <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
+                    </div>
+
                 }
             </div>
         )
