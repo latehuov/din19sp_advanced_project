@@ -106,9 +106,14 @@ values(1,5),
 	(2,3),
 	(3,2),
 	(4,5),
+	(5,1),
 	(6,1),
 	(7,5),
 	(8,4),
 	(9,4.32),
 	(10,3.57)
 ;
+
+
+//get average
+select id_restaurant, avg(rating) from ratings group by id_restaurant order by id_restaurant;
