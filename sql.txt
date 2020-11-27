@@ -94,4 +94,21 @@ values(1 , NULL ,'2, 3' , 'perkele'),
 
 ---------------------------------------------------------------------------
 
+create table public.ratings(
+	id_rating serial primary key,
+	id_restaurant INT, 
+	cookie varchar(255),
+	rating real
+);
 
+insert into public.ratings(id_restaurant, rating) 
+values(1,5),
+	(2,3),
+	(3,2),
+	(4,5),
+	(6,1),
+	(7,5),
+	(8,4),
+	(9,4.32),
+	(10,3.57)
+;
