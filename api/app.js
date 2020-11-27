@@ -7,6 +7,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
 var commentsRouter = require('./routes/comments');
+var ratingsRouter = require('./routes/ratings');
 
 var cors = require('cors');
 const helmet = require('helmet');
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/restaurants', restaurantsRouter);
 app.use('/comments', commentsRouter);
+app.use('/ratings', ratingsRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
