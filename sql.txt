@@ -117,3 +117,6 @@ values(1,5),
 
 //get average
 select id_restaurant, avg(rating) from ratings group by id_restaurant order by id_restaurant;
+
+//joins restaurants and ratings average
+select restaurants.*, round(avg(rating)::numeric, 3) as rating from restaurants join ratings on restaurants.id_restaurant = ratings.id_restaurant group by restaurants.id_restaurant;
