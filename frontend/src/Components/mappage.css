@@ -1,0 +1,25 @@
+.header{
+    height: 50px;
+    background: gray;
+    
+    margin-bottom: 15px;
+    }
+
+.contentbox{
+    width:95%;
+    margin: auto;
+}
+
+.menu{
+    border: black solid 2px;
+    display: inline-block;
+    width: 29%;
+    height: 550px;
+}
+.map{
+    border: black solid 2px;
+    display: inline-block;
+    margin-left: 5%;
+    width: 65%;
+    height: 550px;
+}

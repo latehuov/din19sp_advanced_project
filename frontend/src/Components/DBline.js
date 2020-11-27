@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 var today = new Date()
 var hours = today.getHours()
 var minutes = today.getMinutes()
@@ -62,7 +61,10 @@ export default class DBline extends Component {
     }
 
     render() {
+        const pic = require(`./Fuchka.jpg`) 
+
         return (
+
             <div class="a1" onClick={() => this.handleClick()}>
                 <p class="restInfo">{this.props.item.name_res}</p>
                 <p class="restInfo">{this.props.item.address}</p>
@@ -72,6 +74,8 @@ export default class DBline extends Component {
                     this.state.displayInfo == true &&
                     <div>
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
+                        
+                        <img src={pic} ></img>
                     </div>
 
                 }
