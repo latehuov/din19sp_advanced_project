@@ -1,0 +1,16 @@
+.header{
+    height: 50px;
+    background: rgb(129, 0, 39);
+    color: ivory;
+    border-radius: 0 0 5px 0;
+    text-align: center;
+    }
+    h1{
+        display: inline-block;
+    }
+    
+    h2{
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: 15px;
+    }

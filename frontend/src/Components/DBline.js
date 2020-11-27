@@ -15,7 +15,6 @@ function checkIfOpen(open, close) {
     else if (openHours == hours) {
         let openMinutes = open.substring(3, 5)
         parseInt(openMinutes)
-        console.log(openMinutes, minutes)
         if (openMinutes < minutes) {
             return "open"
         }

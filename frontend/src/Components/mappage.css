@@ -1,9 +1,4 @@
-.header{
-    height: 50px;
-    background: gray;
-    
-    margin-bottom: 15px;
-    }
+
 
 .contentbox{
     width:95%;
@@ -12,9 +7,9 @@
 
 .menu{
     border: black solid 2px;
-    display: inline-block;
     width: 29%;
     height: 550px;
+    float: left;
 }
 .map{
     border: black solid 2px;

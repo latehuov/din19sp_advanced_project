@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styles from "./mappage.css"
+import MapContainer from "./map.js"
+import Header from './header.js'
 export default class Mappage extends Component {
     constructor(props) {
         super(props);
@@ -11,17 +13,15 @@ export default class Mappage extends Component {
     render() {
         return (
             <div class="mainDisplay">
-                <div class="header">
-                    <h1 class="theTitle">localhostess3000</h1>
-                </div>
+                <Header />
                 <div class="contentbox">
                     <div class="menu">
                         menu
                     </div>
                     <div class="map">
-                        map
+                        <MapContainer />
                     </div>
-                
+
                 </div>
             </div>
         )

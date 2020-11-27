@@ -3,7 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Mainpage from "./Components/mainpage.js"
 import Mappage from "./Components/mappage.js"
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route, Link } from 'react-router-dom';
+import history from './history.js';
 
 let fakeData = require('./example.json')
 
@@ -33,7 +34,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router  history={history}>
         <Route path="/" exact render={(routeProps) =>
           <Mainpage data={this.state.data} SearchResult={this.state.SearchResult} setSearchResult={this.setSearchResult}  {...routeProps} />}
         />
