@@ -1,12 +1,12 @@
 .dataBox{
-    width: 70%;
+		width: 70%;
 }
 
 #searchbox {
 	width: 230px;
-    position: relative;
-    padding-left: 10px;
-    padding-top: 10px;
+	position: relative;
+  padding-left: 10px;
+  padding-top: 10px;
 	background-color: rgb(129, 0, 39);
 	color: ivory;
 	border-radius: 5px 5px 0 0;
@@ -22,11 +22,15 @@
 	display: grid;
 	grid-template-columns: 250px 170px 160px 150px;
 	justify-content: left;
-    width: 65%;
-    margin-bottom: 10px;
+	width: 65%;
+  margin-bottom: 10px;
 	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, rgb(255, 60, 0), rgb(255, 240, 106));
 	/* border: solid black 2px; */
 	border-radius: 5px;
+}
+
+.a1:hover{
+	opacity: 0.8;
 }
 
  p, .a1 > .restInfo{
