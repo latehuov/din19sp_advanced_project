@@ -113,3 +113,7 @@ values(1,5),
 	(9,4.32),
 	(10,3.57)
 ;
+
+
+//get average
+select id_restaurant, avg(rating) from ratings group by id_restaurant order by id_restaurant;
