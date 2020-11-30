@@ -60,7 +60,6 @@ export default class DBline extends Component {
     }
 
     render() {
-        const pic = require(`./Fuchka.jpg`) 
 
         return (
 
@@ -74,7 +73,7 @@ export default class DBline extends Component {
                     <div>
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
                         
-                        <img src={pic} ></img>
+                        <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
                     </div>
 
                 }
