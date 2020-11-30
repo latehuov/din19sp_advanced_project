@@ -16,7 +16,7 @@ export default class Mainpage extends Component {
     render() {
         return (
             <div class="mainDisplay">
-                <Header />
+                <Header  history={this.props.history}/>
                 <div id="NoelleBox">
                     <img id="Noelle" src={pic} alt="aaa"></img>
                 </div>

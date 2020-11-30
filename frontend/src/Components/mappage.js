@@ -12,8 +12,9 @@ export default class Mappage extends Component {
 
     render() {
         return (
+
             <div class="mainDisplay">
-                <Header />
+                <Header history={this.props.history}/>
                 <div class="contentbox">
                     <div class="menu">
                         menu
