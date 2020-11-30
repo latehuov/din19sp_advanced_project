@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Mainpage from "./Components/mainpage.js"
 import Mappage from "./Components/mappage.js"
-import {  BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
 let fakeData = require('./example.json')
@@ -13,12 +13,16 @@ class App extends Component {
     super(props);
     this.state = {
       data: fakeData,
-      SearchResult: fakeData
+      SearchResult: fakeData,
+      selectedRestaurant: null
     }
   }
 
   setSearchResult = (value) => {
     this.setState({ SearchResult: value })
+  }
+  setSelectedRestaurant = (value) => {
+    this.setState({ selectedRestaurant: value })
   }
 
   componentDidMount() {
@@ -33,15 +37,24 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <Router  >
         <Route path="/" exact render={(routeProps) =>
-          <Mainpage data={this.state.data} SearchResult={this.state.SearchResult} setSearchResult={this.setSearchResult}  {...routeProps} />}
+          <Mainpage
+            data={this.state.data}
+            SearchResult={this.state.SearchResult}
+            setSearchResult={this.setSearchResult}
+            {...routeProps} />}
         />
 
         <Route path="/map" exact render={(routeProps) =>
-          <Mappage data={this.state.data} SearchResult={this.state.SearchResult} setSearchResult={this.setSearchResult}  {...routeProps} />}
-        
+          <Mappage
+            data={this.state.data}
+            selectedRestaurant={this.state.selectedRestaurant}
+            setSelectedRestaurant={this.setSelectedRestaurant}
+            {...routeProps} />}
+
         />
       </Router>
     )

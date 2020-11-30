@@ -10,9 +10,9 @@ const style = {
 
 
 export class MapContainer extends Component {
-    onMarkerClick = (item, data) => {
-        data = item.id
-        this.props.SetSelectedCharger(item)
+    onMarkerClick = (item) => {
+        this.props.setSelectedRestaurant(item)
+        console.log(this.props.selectedRestaurant)
     }
 
 
@@ -24,9 +24,14 @@ export class MapContainer extends Component {
                     lat: 65.012093,
                     lng: 25.465076
                 }}
-                zoom={5}>
+                zoom={12}>
 
 
+                {
+                    this.props.data.map(item => <Marker onClick={() => this.onMarkerClick(item)} 
+                        position={{ lat: item.lat, lng: item.lng }}
+                        key={item.id_restaurant} title={item.name_res} {...item} />)
+                }
 
 
 
