@@ -9,7 +9,9 @@ create table public.restaurants(
 	time_open varchar(255),
 	time_close varchar(255),
 	type_res varchar(255),
-	desc_rest varchar(255)
+	desc_rest varchar(255),
+	lat double precision,
+	lng double precision
 );
 
 grant usage on schema public to dbaccess;
@@ -19,18 +21,18 @@ GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO dbaccess;
 
 
 
-insert into public.restaurants (name_res, address, time_open, time_close, type_res, desc_rest)
+insert into public.restaurants (name_res, address, time_open, time_close, type_res, desc_rest, lat, lng)
 values
-('Noodlebar 9', 'Merikoskenkatu 9', '10:00', '20:00', 'Noodles', 'A nice place to have authenticish noodles'),
-('Oulun Pikku Thai Ravintola', 'Asemakatu 29', '10:30', '20:00', 'Thai', 'A nice thai restaurant with sweet and spicy foods, beware the coconut milk' ),
-('Oulun Kathmandu', 'Pakkahuoneenkatu 8', '10:30', '21:00', 'Indian', 'Just about what you would expect from an indian place'),
-('Grill Swing', 'Valtatie 21', '10:30', '22:00', 'Grill', 'All the grill classics are available, and some store specialities as well'),
-('Pikkelssi', 'Iskontie 3', '08:00', '14:00', 'Buffet', 'A typical finnish diner, a buffet and drinks'),
-('Crecian', 'Kirkkokatu 55', '11:00', '21:00', 'Greek', 'The music is nice and the feta is everywhere'),
-('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian', 'An italian diner, dont you dare try to put ketchup on anything or may god help you'),
-('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food', 'A small place with big burgers and expensive beer'),
-('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger', 'All the pizza and kebab you could ever want to eat from this place'),
-('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi', 'Dont really know, never eaten bangladeshi food before');
+('Noodlebar 9', 'Merikoskenkatu 9', '10:00', '20:00', 'Noodles', 'A nice place to have authenticish noodles', 65.02538288400132, 25.46951459871543),
+('Oulun Pikku Thai Ravintola', 'Asemakatu 29', '10:30', '20:00', 'Thai', 'A nice thai restaurant with sweet and spicy foods, beware the coconut milk', 65.01282154804875, 25.478972727550182),
+('Oulun Kathmandu', 'Pakkahuoneenkatu 8', '10:30', '21:00', 'Indian', 'Just about what you would expect from an indian place', 65.01324198399563, 25.468945998715014),
+('Grill Swing', 'Valtatie 21', '10:30', '22:00', 'Grill', 'All the grill classics are available, and some store specialities as well', 65.02770551350237, 25.461314327550667),
+('Pikkelssi', 'Iskontie 3', '08:00', '14:00', 'Buffet', 'A typical finnish diner, a buffet and drinks', 65.04255581098838, 25.47339196988077),
+('Crecian', 'Kirkkokatu 55', '11:00', '21:00', 'Greek', 'The music is nice and the feta is everywhere', 65.00760081564707, 25.464344156385106),
+('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian', 'An italian diner, dont you dare try to put ketchup on anything or may god help you',65.01134671627138, 25.48191402755013),
+('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food', 'A small place with big burgers and expensive beer', 65.03604754017486, 25.4414438275509),
+('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger', 'All the pizza and kebab you could ever want to eat from this place', 65.01283254608315, 25.466886369849426),
+('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi', 'Dont really know, never eaten bangladeshi food before', 65.00820001524055, 25.466427769879644);
 
 
 --------------
@@ -120,3 +122,14 @@ select id_restaurant, avg(rating) from ratings group by id_restaurant order by i
 
 //joins restaurants and ratings average
 select restaurants.*, round(avg(rating)::numeric, 3) as rating from restaurants join ratings on restaurants.id_restaurant = ratings.id_restaurant group by restaurants.id_restaurant;
+
+
+---------------------------------------
+
+chat table 
+
+create table public.chat(
+	id_msg serial primary key,
+	msg varchar(255),
+	d_name varchar(255)
+);

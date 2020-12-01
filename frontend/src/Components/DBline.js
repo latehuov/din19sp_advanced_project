@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 var today = new Date()
 var hours = today.getHours()
 var minutes = today.getMinutes()
@@ -16,7 +15,6 @@ function checkIfOpen(open, close) {
     else if (openHours == hours) {
         let openMinutes = open.substring(3, 5)
         parseInt(openMinutes)
-        console.log(openMinutes, minutes)
         if (openMinutes < minutes) {
             return "open"
         }
@@ -62,7 +60,9 @@ export default class DBline extends Component {
     }
 
     render() {
+
         return (
+
             <div class="a1" onClick={() => this.handleClick()}>
                 <p class="restInfo">{this.props.item.name_res}</p>
                 <p class="restInfo">{this.props.item.address}</p>
@@ -72,6 +72,8 @@ export default class DBline extends Component {
                     this.state.displayInfo == true &&
                     <div>
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
+                        
+                        <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
                     </div>
 
                 }

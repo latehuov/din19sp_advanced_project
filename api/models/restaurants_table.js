@@ -1,8 +1,13 @@
 var db = require('../db');
 var restaurants = {
-    get: function (callback) {
+    /*get: function (callback) {
         return db.query('select * from public.restaurants order by id_restaurant desc', callback);
+    },*/
+
+    get: function (callback) {
+        return db.query('select restaurants.*, round(avg(rating)::numeric, 3) as rating from restaurants join ratings on restaurants.id_restaurant = ratings.id_restaurant group by restaurants.id_restaurant;', callback);
     },
+
     getById: function (id, callback) {
         return db.query('select * from public.restaurants where id_restaurant=$1', [id], callback);
     },

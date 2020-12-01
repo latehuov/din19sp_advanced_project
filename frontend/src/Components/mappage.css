@@ -1,0 +1,24 @@
+
+
+.contentbox{
+    width:95%;
+    margin: auto;
+}
+
+.menu{
+    border: black solid 2px;
+    width: 29%;
+    height: 550px;
+    float: left;
+}
+.map{
+    border: black solid 2px;
+    display: inline-block;
+    margin-left: 5%;
+    width: 65%;
+    height: 550px;
+}
+
+p{
+    color:black
+}
