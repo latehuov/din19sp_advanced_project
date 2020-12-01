@@ -122,3 +122,14 @@ select id_restaurant, avg(rating) from ratings group by id_restaurant order by i
 
 //joins restaurants and ratings average
 select restaurants.*, round(avg(rating)::numeric, 3) as rating from restaurants join ratings on restaurants.id_restaurant = ratings.id_restaurant group by restaurants.id_restaurant;
+
+
+---------------------------------------
+
+chat table 
+
+create table public.chat(
+	id_msg serial primary key,
+	msg varchar(255),
+	d_name varchar(255)
+);
