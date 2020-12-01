@@ -23,6 +23,7 @@ export default class Mappage extends Component {
                     <p class="restInfo">{this.props.selectedRestaurant.name_res}</p>
                     <p class="restInfo">{this.props.selectedRestaurant.address}</p>
                     <p class="restInfo">{this.props.selectedRestaurant.type_res}</p>
+                    <p class="restInfo">score : {this.props.selectedRestaurant.rating}</p>
                     <p class="restInfo">working hours : {this.props.selectedRestaurant.time_open} - {this.props.selectedRestaurant.time_close}</p>
                     <div>
                         <p id={this.props.selectedRestaurant.id_restaurant} >{this.props.selectedRestaurant.desc_rest}</p>

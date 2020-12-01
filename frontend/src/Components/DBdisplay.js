@@ -42,7 +42,9 @@ export default class DBdisplay extends Component {
                 
                     {
                         this.props.SearchResult.map(item =>
-                            <DBline item={item}/>
+                            <DBline 
+                            item={item}
+                            userId={this.props.userId}/>
                         )
                     }
 

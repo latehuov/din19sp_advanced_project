@@ -16,12 +16,17 @@ export default class Mainpage extends Component {
     render() {
         return (
             <div class="mainDisplay">
-                <Header  history={this.props.history}/>
+                <Header
+                    history={this.props.history} />
                 <div id="NoelleBox">
                     <img id="Noelle" src={pic} alt="aaa"></img>
                 </div>
                 <br></br>
-                <DBdisplay data={this.props.data} setSearchResult={this.props.setSearchResult} SearchResult={this.props.SearchResult} />
+                <DBdisplay
+                    userId={this.props.userId}
+                    data={this.props.data}
+                    setSearchResult={this.props.setSearchResult}
+                    SearchResult={this.props.SearchResult} />
                 <img id="theGif" src={gif} alt="aaa"></img>
             </div>
         )
