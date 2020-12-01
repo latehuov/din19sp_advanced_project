@@ -15,7 +15,7 @@ var ratings = {
         console.log(name_res);
         return db.query(
             'insert into public.ratings(id_restaurant, cookie, rating) values($1,$2,$3)',
-            [ratings.id_restaurant, ratings.cookie, ratings.rating],
+            [name_res.id_restaurant, name_res.cookie, name_res.rating],
             callback
         );
     },
