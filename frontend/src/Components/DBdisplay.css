@@ -2,7 +2,7 @@
 		width: 70%;
 }
 
-#searchbox {
+.searchbox {
 	width: 230px;
 	position: relative;
   padding-left: 10px;
@@ -14,7 +14,7 @@
 	bottom: 21px;
 }
 
-#searchInput {
+.searchinput {
 		margin: auto;
 }
 
@@ -24,7 +24,7 @@
 	justify-content: left;
 	width: 65%;
   margin-bottom: 10px;
-	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, rgb(255, 60, 0), rgb(255, 240, 106));
+	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, rgb(180, 0, 111));
 	/* border: solid black 2px; */
 	border-radius: 5px;
 }
@@ -41,5 +41,10 @@
 
 .restDescription{
     display: none;
+}
+
+img{
+	width: 100%;
+	height: auto;
 }
 
