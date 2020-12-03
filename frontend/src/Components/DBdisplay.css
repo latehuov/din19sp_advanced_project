@@ -2,7 +2,7 @@
 		width: 70%;
 }
 
-#searchbox {
+.searchbox {
 	width: 230px;
 	position: relative;
   padding-left: 10px;
@@ -14,7 +14,7 @@
 	bottom: 21px;
 }
 
-#searchInput {
+.searchinput {
 		margin: auto;
 }
 
@@ -41,5 +41,10 @@
 
 .restDescription{
     display: none;
+}
+
+img{
+	width: 100%;
+	height: auto;
 }
 
