@@ -133,3 +133,13 @@ create table public.chat(
 	msg varchar(255),
 	d_name varchar(255)
 );
+
+
+---------------------------------------
+
+users table
+
+create table public.users(
+	u_name varchar(255) primary key,
+	password varchar(255)
+);
