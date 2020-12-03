@@ -79,11 +79,11 @@ export default class DBline extends Component {
                         <p className="restInfo">{this.props.item.type_res}</p>
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
                         <div className="ratingButtons">
-                            <button onClick={()=>this.Clicked()}>1</button>
-                            <button>2</button>
-                            <button>3</button>
-                            <button>4</button>
-                            <button>5</button>
+                            <button className="imgButton" onClick={()=>this.Clicked()}>1</button>
+                            <button className="imgButton">2</button>
+                            <button className="imgButton">3</button>
+                            <button className="imgButton">4</button>
+                            <button className="imgButton">5</button>
                             <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
                         </div>
                     </div>
