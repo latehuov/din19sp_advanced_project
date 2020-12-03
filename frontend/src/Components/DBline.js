@@ -64,27 +64,28 @@ export default class DBline extends Component {
     }
 
     render() {
-
         return (
 
-            <div class="a1" onClick={() => this.handleClick()}>
-                <p class="restInfo">{this.props.item.name_res}</p>
-                <p class="restInfo">{this.props.item.address}</p>
-                <p class="restInfo">score : {this.props.item.rating}</p>
-                <p class="restInfo">{checkIfOpen(this.props.item.time_open, this.props.item.time_close)}</p>
-
+            <div className="a1" onClick={() => this.handleClick()}>
+                <p className="restInfo">{this.props.item.name_res}</p>
+                <p className="restInfo">{this.props.item.address}</p>
+                <p className="restInfo">{this.props.item.rating}</p>
+                <p className="restInfo">{this.props.item.type_res}</p>
+                <p className="restInfo">{checkIfOpen(this.props.item.time_open, this.props.item.time_close)}</p>
                 {
                     this.state.displayInfo == true &&
-                    <div>
+                    <div className="restImage">
 
-                        <p class="restInfo">{this.props.item.type_res}</p>
+                        <p className="restInfo">{this.props.item.type_res}</p>
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
-                        <button onClick={()=>this.Clicked()}>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
+                        <div className="ratingButtons">
+                            <button className="imgButton" onClick={()=>this.Clicked()}>1</button>
+                            <button className="imgButton">2</button>
+                            <button className="imgButton">3</button>
+                            <button className="imgButton">4</button>
+                            <button className="imgButton">5</button>
+                            <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
+                        </div>
                     </div>
 
                 }
