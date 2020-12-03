@@ -32,7 +32,11 @@ values
 ('Ravintola-Ristorante Toscana', 'Hallituskatu 35', '11:00', '20:00', 'Italian', 'An italian diner, dont you dare try to put ketchup on anything or may god help you',65.01134671627138, 25.48191402755013),
 ('La Cucina', 'Satamatie 26', '10:30', '21:00', 'Fast Food', 'A small place with big burgers and expensive beer', 65.03604754017486, 25.4414438275509),
 ('Kauppuri 5', 'Kauppurienkatu 5', '11:00', '14:00', 'Hamburger', 'All the pizza and kebab you could ever want to eat from this place', 65.01283254608315, 25.466886369849426),
-('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi', 'Dont really know, never eaten bangladeshi food before', 65.00820001524055, 25.466427769879644);
+('Fuchka', 'Nummikatu 32', '10:00', '21:00', 'Bangladeshi', 'Dont really know, never eaten bangladeshi food before', 65.00820001524055, 25.466427769879644),
+('Mikan Cafe & Burger', 'Asemakatu 39', '10:30', '20:00', 'Burger', 'Cofee and burgers and shit', 65.01190089584277, 25.482631529841374),
+('Friends & Brgrs Oulu', 'Valkea shopping center', '10:30', '21:00', 'Burger, featherless biped meat', 'Apparently a good place to get burgers', 65.01148188314366, 25.471816861473332),
+('Social Burger joint', 'Kauppurienkatu 10', '10:30', '21:00', 'Burger', 'Burgers and stuff in a shop on a street', 65.01222516233764, 25.468726956942128),
+('Kino Grilli', 'Albertinkatu', '09:30', '14:30', 'Burgers, fast food', 'A typical grill, close to the cinema', 65.01023095193813, 25.468126142172174);
 
 
 --------------
