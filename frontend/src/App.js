@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import cookie from "react-cookies"
 import './App.css';
 import axios from 'axios';
 import Mainpage from "./Components/mainpage.js"
 import Mappage from "./Components/mappage.js"
+import Loginpage from "./Components/loginpage.js"
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
+
+cookies.set('userID', '1', { path: '/' });
 
 
 let fakeData = require('./example.json')
@@ -17,7 +22,7 @@ class App extends Component {
     this.state = {
       data: fakeData,
       SearchResult: fakeData,
-      selectedRestaurant: null
+      selectedRestaurant: null,
     }
   }
 
@@ -32,11 +37,11 @@ class App extends Component {
 
   componentDidMount() {
     axios.get('http://localhost:4000/restaurants')
-    
+
 
       .then((response) => {
         if (response.data) {
-          this.state = { userId: cookie.save('userId', '123') }
+
           this.setState({ data: response.data })
           this.setState({ SearchResult: response.data })
         }
@@ -47,8 +52,8 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.userId)
 
+    console.log(cookies.get('userID'));
     return (
       <Router  >
         <Route path="/" exact render={(routeProps) =>
@@ -65,6 +70,12 @@ class App extends Component {
             data={this.state.data}
             selectedRestaurant={this.state.selectedRestaurant}
             setSelectedRestaurant={this.setSelectedRestaurant}
+            {...routeProps} />}
+
+        />
+        <Route path="/login" exact render={(routeProps) =>
+          <Loginpage
+            data={this.state.data}
             {...routeProps} />}
 
         />

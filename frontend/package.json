@@ -10,10 +10,12 @@
     "google-maps-react": "^2.0.6",
     "history": "^5.0.0",
     "react": "^17.0.1",
+    "react-cookie": "^4.0.3",
     "react-cookies": "^0.1.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "universal-cookie": "^4.0.4",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

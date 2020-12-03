@@ -64,9 +64,7 @@ export default class DBline extends Component {
     }
 
     render() {
-
         return (
-
             <div class="a1" onClick={() => this.handleClick()}>
                 <p class="restInfo">{this.props.item.name_res}</p>
                 <p class="restInfo">{this.props.item.address}</p>
