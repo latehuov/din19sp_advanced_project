@@ -19,7 +19,8 @@ export default class Helppage extends Component {
     borgarsClicked = () => {
         let restaurantsOfChoice = []
         this.props.data.map(restaurant => {
-            if(restaurant.type_res == "Hamburger"){
+            let type_res = restaurant.type_res.toLowerCase()
+            if(type_res.includes('burger')){
                 restaurantsOfChoice.push(restaurant)
             }
         })
