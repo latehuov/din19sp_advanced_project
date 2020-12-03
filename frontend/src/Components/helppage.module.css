@@ -1,6 +1,7 @@
 .contentbox{
     width: 90%;
     margin: auto;
-    background: gray;
+    background: rgb(129, 0, 39);
     text-align: center;
+    color: ivory;
 }

@@ -1,4 +1,4 @@
-.contentbox{
+.contentbox {
     background-color: #DCDCDC;
     width: 75%;
     height: 100%;
@@ -6,14 +6,18 @@
     margin-bottom: 25px;
 }
 
-
-.header{
-    text-align: center;
+p {
+    color: ivory;
 }
 
-.loginbox{
+.header {
+    text-align: center;
+    color: ivory;
+}
+
+.loginbox {
     border: 1px solid black;
-    background-color:#C0C0C0;
+    background-color: rgb(129, 0, 39);
     width: 400px;
     height: 500px;
     margin: auto;
@@ -21,12 +25,11 @@
     margin-bottom: 100px;
 }
 
-.textinputcontainer{
+.textinputcontainer {
     width: 125px;
     margin:  auto;
-    
 }
-.textinput{
+.textinput {
     width: 100%;
     margin:  auto;
     
@@ -39,8 +42,8 @@ button {
     width: 100%;
     margin:  auto;
   }
-.logincontainer{
+
+.logincontainer {
     width: 75px;
     margin:  auto;
-    
 }

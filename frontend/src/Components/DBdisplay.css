@@ -1,4 +1,4 @@
-.dataBox{
+.dataBox {
 		width: 70%;
 }
 
@@ -30,17 +30,17 @@
 	border-radius: 5px;
 }
 
-.a1:hover{
+.a1:hover {
 	opacity: 0.8;
 }
 
-p, .a1 > .restInfo{
+p, .a1 > .restInfo {
     text-align: center;
     color: ivory;
     margin: 10px;
 }
 
-.restDescription{
+.restDescription {
 		display: none;
 }
 
