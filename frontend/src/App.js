@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Cookies from 'universal-cookie';
+
 
 
 import Mainpage from "./Components/mainpage.js"
@@ -10,9 +10,7 @@ import Mappage from "./Components/mappage.js"
 import Loginpage from "./Components/loginpage.js"
 import Helppage from "./Components/helppage.js"
 
-const cookies = new Cookies();
 
-cookies.set('userID', '1', { path: '/' });
 
 
 let fakeData = require('./example.json')
@@ -55,8 +53,6 @@ class App extends Component {
 
 
   render() {
-
-    console.log(cookies.get('userID'));
     return (
       <Router  >
         <Route path="/" exact render={(routeProps) =>
