@@ -1,4 +1,4 @@
-var db = require('../database');
+var db = require('../db');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 var users = {

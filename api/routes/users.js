@@ -1,3 +1,5 @@
+const basicAuth = require('express-basic-auth');
+router.use(basicAuth({users: { 'admin': '1234' }}))
 var express = require('express');
 var router = express.Router();
 var user = require('../models/user_model');

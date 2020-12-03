@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const bcrypt = require('bcrypt');
-var db = require('../database');
+var db = require('../db');
 
 router.post('/', function (request, response) {
     if (request.body.username && request.body.password) {
