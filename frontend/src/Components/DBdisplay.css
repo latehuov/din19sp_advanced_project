@@ -20,11 +20,12 @@
 
 .a1 {
 	display: grid;
-	grid-template-columns: 250px 170px 160px 150px;
+	grid-template-columns: 250px 170px 160px 150px 150px;
 	justify-content: left;
 	width: 65%;
   margin-bottom: 10px;
 	background-image: linear-gradient(to right, rgb(129, 0, 39) 60%, rgb(180, 0, 111));
+	color: ivory;
 	/* border: solid black 2px; */
 	border-radius: 5px;
 }
@@ -33,17 +34,27 @@
 	opacity: 0.8;
 }
 
- p, .a1 > .restInfo{
+p, .a1 > .restInfo{
     text-align: center;
     color: ivory;
     margin: 10px;
 }
 
 .restDescription{
-    display: none;
+		display: none;
 }
 
-img{
+.restImage {
+	display: grid;
+	grid-template-columns: 250px 170px 160px 150px 150px;
+	grid-column: auto;
+}
+
+.ratingButtons{
+	grid-column: 3 / span 5;
+}
+
+img {
 	width: 100%;
 	height: auto;
 }
