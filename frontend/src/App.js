@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
+
 import Mainpage from "./Components/mainpage.js"
 import Mappage from "./Components/mappage.js"
 import Loginpage from "./Components/loginpage.js"
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Cookies from 'universal-cookie';
+import Helppage from "./Components/helppage.js"
 
 const cookies = new Cookies();
 
@@ -75,6 +78,12 @@ class App extends Component {
         />
         <Route path="/login" exact render={(routeProps) =>
           <Loginpage
+            data={this.state.data}
+            {...routeProps} />}
+
+        />
+        <Route path="/help" exact render={(routeProps) =>
+          <Helppage
             data={this.state.data}
             {...routeProps} />}
 

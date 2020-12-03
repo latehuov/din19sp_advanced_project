@@ -21,6 +21,10 @@ export default class Header extends Component {
     loginClicked = (props) => {
         props.history.push('/login');
     }
+    helpClicked = (props) => {
+        props.history.push('/help');
+    }
+
 
 
 
@@ -32,7 +36,7 @@ export default class Header extends Component {
                 <h2 onClick={() => this.homeClicked(this.props)}>Home</h2>
                 <h1 class="theTitle">localhostess3000</h1>
                 <h2 onClick={() => this.mapClicked(this.props)}>Map</h2>
-                <h2 onClick={() => this.mapClicked(this.props)}>Help me!</h2>
+                <h2 onClick={() => this.helpClicked(this.props)}>IwantEat</h2>
             </div>
         )
     }
