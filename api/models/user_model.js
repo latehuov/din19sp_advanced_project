@@ -1,5 +1,5 @@
 var db = require('../db');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const saltRounds = 10;
 var users = {
     get: function (callback) {
@@ -8,7 +8,7 @@ var users = {
     getById: function (id, callback) {
         return db.query('select * from public.users where id=$1', [id], callback);
     },
-    add: function (users, callback) {
+    /*add: function (users, callback) {
         bcrypt.hash(user.password, saltRounds, function (err, hash) {
             console.log(users);
             return db.query(
@@ -22,7 +22,7 @@ var users = {
     /*delete: function(id, callback) {
       return db.query('delete from book_table where id=$1', [id], callback);
     },*/
-    update: function (id, users, callback) {
+    /*update: function (id, users, callback) {
         bcrypt.hash(users.password, saltRounds, function (err, hash) {
             return db.query(
                 'update public.users set u_name=$1, password=$2, where id=$3',
@@ -41,4 +41,5 @@ var users = {
       return db.query('select * from book_table where author ILIKE $1 order by id desc',[authorLike], callback);
     }*/
 };
+
 module.exports = users;

@@ -1,26 +1,25 @@
 var express = require('express');
 var router = express.Router();
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 var db = require('../db');
 
 router.post('/', function (request, response) {
     if (request.body.username && request.body.password) {
+        console.log(request.body);
         var username = request.body.username;
         var password = request.body.password;
         db.query('SELECT * FROM public.users WHERE u_name = $1', [username],
             function (error, dbResults, fields) {
+                console.log(dbResults);
                 if (dbResults.rows.length > 0) {
-                    bcrypt.compare(password, dbResults.rows[0].password, function (err, res) {
-                        if (res) {
-                            console.log("success");
-                            response.send(true);
-                        }
-                        else {
-                            console.log("wrong password");
-                            response.send(false);
-                        }
-                        response.end();
-                    });
+                    if (password === dbResults.rows[0].password) {
+                        console.log("success");
+                        response.send(true);
+                    }
+                    else {
+                        console.log("wrong password");
+                        response.send(false);
+                    }
                 }
                 else {
                     console.log("user does not exists");

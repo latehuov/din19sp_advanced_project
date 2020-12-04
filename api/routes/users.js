@@ -1,5 +1,6 @@
 const basicAuth = require('express-basic-auth');
-router.use(basicAuth({users: { 'admin': '1234' }}))
+//router.use(basicAuth({users: { 'admin': '1234' }}))
+//router.use(basicAuth( { authorizer: myAuthorizer, authorizeAsync:true, } ))
 var express = require('express');
 var router = express.Router();
 var user = require('../models/user_model');
