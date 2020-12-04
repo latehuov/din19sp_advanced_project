@@ -3,11 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const basicAuth = require('express-basic-auth');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var restaurantsRouter = require('./routes/restaurants');
 var commentsRouter = require('./routes/comments');
 var ratingsRouter = require('./routes/ratings');
+var loginRouter = require('./routes/login');
 
 var cors = require('cors');
 const helmet = require('helmet');
@@ -19,9 +21,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+//routes
 app.use('/restaurants', restaurantsRouter);
 app.use('/comments', commentsRouter);
 app.use('/ratings', ratingsRouter);
+app.use('/login', loginRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

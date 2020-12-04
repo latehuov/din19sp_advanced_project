@@ -18,12 +18,11 @@ function LoginPressed(props, state) {
 
 
     if (state == 0) {
-        axios.post('http://localhost:4000/login', {}, {
-            auth: {
+        axios.post('http://localhost:4000/login', {
                 username: userUser,
                 password: userPassword
             }
-        })
+        )
             .then(response => {
                 props.SetIsLoggedIn(true)
                 props.history.push('/');
@@ -35,12 +34,11 @@ function LoginPressed(props, state) {
             })
     }
     else if (state == 1){
-        axios.post('http://localhost:4000/register', {}, {
-            auth: {
+        axios.post('http://localhost:4000/register', {
                 username: userUser,
                 password: userPassword
             }
-        })
+        )
             .then(response => {
                 props.SetIsLoggedIn()
                 props.history.push('/content');
@@ -103,7 +101,7 @@ export default class Loginpage extends Component {
 
                             <br></br>
                             <div className={styles.logincontainer}>
-                                <button type="submit" onClick={() => LoginPressed(this.props)}>Login</button>
+                                <button type="submit" onClick={() => LoginPressed(this.props, this.state.pageState)}>Login</button>
                                 <button type="submit" onClick={() => this.ChangeView()}>To Register</button>
                             </div>
 
