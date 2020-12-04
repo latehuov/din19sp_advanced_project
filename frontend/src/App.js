@@ -66,6 +66,8 @@ class App extends Component {
             data={this.state.data}
             SearchResult={this.state.SearchResult}
             setSearchResult={this.setSearchResult}
+            username={this.state.username}
+            setUsername={this.setUsername}
             {...routeProps} />}
         />
 
@@ -74,11 +76,14 @@ class App extends Component {
             data={this.state.data}
             selectedRestaurant={this.state.selectedRestaurant}
             setSelectedRestaurant={this.setSelectedRestaurant}
+            username={this.state.username}
+            setUsername={this.setUsername}
             {...routeProps} />}
 
         />
         <Route path="/login" exact render={(routeProps) =>
           <Loginpage
+            username={this.state.username}
             setUsername={this.setUsername}
             data={this.state.data}
             {...routeProps} />}
@@ -87,6 +92,8 @@ class App extends Component {
         <Route path="/help" exact render={(routeProps) =>
           <Helppage
             data={this.state.data}
+            username={this.state.username}
+            setUsername={this.setUsername}
             {...routeProps} />}
 
         />

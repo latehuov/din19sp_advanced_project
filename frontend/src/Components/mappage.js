@@ -40,7 +40,7 @@ export default class Mappage extends Component {
 
 
             <div class="mainDisplay">
-                <Header history={this.props.history} />
+                <Header history={this.props.history} username={this.props.username} setUsername={this.props.setUsername}/>
                 <div class="contentbox">
                     <div class="menu">
                         {output}

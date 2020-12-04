@@ -19,12 +19,12 @@ function LoginPressed(props, state) {
 
     if (state == 0) {
         axios.post('http://localhost:4000/login', {
-                username: userUser,
-                password: userPassword
-            }
+            username: userUser,
+            password: userPassword
+        }
         )
             .then(response => {
-                
+
                 console.log(response)
                 props.setUsername(userUser)
                 props.history.push('/');
@@ -36,11 +36,11 @@ function LoginPressed(props, state) {
                 props.history.push('/login');
             })
     }
-    else if (state == 1){
+    else if (state == 1) {
         axios.post('http://localhost:4000/register', {
-                username: userUser,
-                password: userPassword
-            }
+            username: userUser,
+            password: userPassword
+        }
         )
             .then(response => {
                 props.SetIsLoggedIn()
@@ -86,7 +86,9 @@ export default class Loginpage extends Component {
         if (this.state.pageState == 0) {
             output = (
                 <div class="mainDisplay">
-                    <Header history={this.props.history} />
+                    <Header history={this.props.history}
+                        username={this.props.username}
+                        setUsername={this.props.setUsername} />
                     <div>
                         <div className={styles.loginbox}>
                             <h3 className={styles.header}>Log in</h3>

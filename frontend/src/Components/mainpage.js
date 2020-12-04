@@ -17,7 +17,7 @@ export default class Mainpage extends Component {
         return (
             <div class="mainDisplay">
                 <Header
-                    history={this.props.history} />
+                    history={this.props.history}  username={this.props.username} setUsername={this.props.setUsername}/>
                 <div id="NoelleBox">
                     <img id="Noelle" src={pic} alt="aaa"></img>
                 </div>

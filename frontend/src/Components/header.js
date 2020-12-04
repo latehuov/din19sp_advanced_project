@@ -21,6 +21,10 @@ export default class Header extends Component {
     loginClicked = (props) => {
         props.history.push('/login');
     }
+    logoutClicked = (props) => {
+        props.setUsername(null)
+        props.history.push('/login');
+    }
     helpClicked = (props) => {
         props.history.push('/help');
     }
@@ -29,10 +33,17 @@ export default class Header extends Component {
 
 
 
+
     render() {
+        let button = (
+            <h2 onClick={() => this.loginClicked(this.props)}>Log in</h2>
+        )
+        if(this.props.username != null){
+            button = <h2 onClick={() => this.logoutClicked(this.props)}>Log out</h2>
+        }
         return (
             <div class="header">
-                <h2 onClick={() => this.loginClicked(this.props)}>Log in</h2>
+                {button}
                 <h2 onClick={() => this.homeClicked(this.props)}>Home</h2>
                 <h1 class="theTitle">localhostess3000</h1>
                 <h2 onClick={() => this.mapClicked(this.props)}>Map</h2>

@@ -54,10 +54,10 @@ export default class Helppage extends Component {
 
 
             <div class="mainDisplay">
-                <Header history={this.props.history} />
+                <Header history={this.props.history}  username={this.props.username} setUsername={this.props.setUsername}/>
                 <div className={styles.contentbox}>
                     <h1>Hungry? Desparate? Confused?</h1><br></br>
-                    <h2>can't decide what to eat?</h2><br></br>
+                    <h3>can't decide what to eat?</h3><br></br>
                     <h1>This page is for you!</h1><br></br>
                     <button onClick={() => this.randomClicked()}>I want something!</button>
                     <button onClick={() => this.borgarsClicked()}>I want borgars!</button>
