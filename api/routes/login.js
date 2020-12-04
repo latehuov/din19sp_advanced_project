@@ -5,12 +5,10 @@ var db = require('../db');
 
 router.post('/', function (request, response) {
     if (request.body.username && request.body.password) {
-        console.log(request.body);
         var username = request.body.username;
         var password = request.body.password;
         db.query('SELECT * FROM public.users WHERE u_name = $1', [username],
             function (error, dbResults, fields) {
-                console.log(dbResults);
                 if (dbResults.rows.length > 0) {
                     if (password === dbResults.rows[0].password) {
                         console.log("success");

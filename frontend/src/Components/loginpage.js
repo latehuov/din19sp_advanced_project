@@ -101,7 +101,7 @@ export default class Loginpage extends Component {
 
                             <br></br>
                             <div className={styles.logincontainer}>
-                                <button type="submit" onClick={() => LoginPressed(this.props)}>Login</button>
+                                <button type="submit" onClick={() => LoginPressed(this.props, this.state.pageState)}>Login</button>
                                 <button type="submit" onClick={() => this.ChangeView()}>To Register</button>
                             </div>
 
