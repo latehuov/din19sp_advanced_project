@@ -151,3 +151,6 @@ create table public.users(
 	u_name varchar(255) primary key,
 	password varchar(255)
 );
+
+
+insert into users (u_name, password) values ('admin', 'admin');
