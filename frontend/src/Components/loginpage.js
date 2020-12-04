@@ -24,13 +24,13 @@ function LoginPressed(props, state) {
             }
         )
             .then(response => {
-                props.SetIsLoggedIn()
-                props.history.push('/content');
+                props.SetIsLoggedIn(true)
+                props.history.push('/');
 
             })
             .catch(() => {
                 console.log("failed")
-                props.history.push('/');
+                props.history.push('/login');
             })
     }
     else if (state == 1){
