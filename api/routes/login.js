@@ -16,18 +16,18 @@ router.post('/', function (request, response) {
                     }
                     else {
                         console.log("wrong password");
-                        response.send(false);
+                        response.sendStatus(422);
                     }
                 }
                 else {
                     console.log("user does not exists");
-                    response.send(false);
+                    response.sendStatus(422);
                 }
             });
     }
     else {
         console.log("Give the username and password");
-        response.send(false);
+        response.sendStatus(422);
     }
 });
 
