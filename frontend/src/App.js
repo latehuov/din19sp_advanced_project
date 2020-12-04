@@ -24,7 +24,7 @@ class App extends Component {
       data: fakeData,
       SearchResult: fakeData,
       selectedRestaurant: null,
-      isLoggedIn: false
+      username: null
     }
   }
 
@@ -34,8 +34,8 @@ class App extends Component {
   setSelectedRestaurant = (value) => {
     this.setState({ selectedRestaurant: value })
   }
-  SetIsLoggedIn = (value) => {
-    this.setState({ isLoggedIn: value })
+  setUsername = (value) => {
+    this.setState({ username: value })
   }
 
 
@@ -79,7 +79,7 @@ class App extends Component {
         />
         <Route path="/login" exact render={(routeProps) =>
           <Loginpage
-            SetIsLoggedIn={this.SetIsLoggedIn}
+            setUsername={this.setUsername}
             data={this.state.data}
             {...routeProps} />}
 

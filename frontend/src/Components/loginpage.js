@@ -24,11 +24,14 @@ function LoginPressed(props, state) {
             }
         )
             .then(response => {
-                props.SetIsLoggedIn(true)
+                
+                console.log(response)
+                props.setUsername(userUser)
                 props.history.push('/');
 
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err)
                 console.log("failed")
                 props.history.push('/login');
             })
@@ -41,7 +44,7 @@ function LoginPressed(props, state) {
         )
             .then(response => {
                 props.SetIsLoggedIn()
-                props.history.push('/content');
+                props.history.push('/');
 
             })
             .catch(() => {
