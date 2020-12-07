@@ -26,6 +26,7 @@ app.use('/restaurants', restaurantsRouter);
 app.use('/comments', commentsRouter);
 app.use('/ratings', ratingsRouter);
 app.use('/login', loginRouter);
+app.use('/users', usersRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

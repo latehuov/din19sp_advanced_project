@@ -8,16 +8,13 @@ var users = {
     getById: function (id, callback) {
         return db.query('select * from public.users where id=$1', [id], callback);
     },
-    /*add: function (users, callback) {
-        bcrypt.hash(user.password, saltRounds, function (err, hash) {
+    add: function (users, callback) {
             console.log(users);
             return db.query(
                 'insert into public.users (u_name, password) values($1,$2)',
-                [users.u_name, hash],
+                [users.u_name, users.password],
                 callback
-            )
-        }
-        );
+            );
     },
     /*delete: function(id, callback) {
       return db.query('delete from book_table where id=$1', [id], callback);
