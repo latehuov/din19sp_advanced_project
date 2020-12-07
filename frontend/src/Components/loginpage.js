@@ -18,6 +18,7 @@ function LoginPressed(props, state) {
 
 
     if (state == 0) {
+        //login state
         axios.post('http://localhost:4000/login', {
             username: userUser,
             password: userPassword
@@ -31,24 +32,25 @@ function LoginPressed(props, state) {
 
             })
             .catch((err) => {
+
                 console.log(err)
-                console.log("failed")
                 props.history.push('/login');
             })
     }
     else if (state == 1) {
+        //register
         axios.post('http://localhost:4000/register', {
-            username: userUser,
+            u_name: userUser,
             password: userPassword
         }
         )
             .then(response => {
-                props.SetIsLoggedIn()
-                props.history.push('/');
+                document.location.reload();
+                props.history.push('/login');
 
             })
             .catch(() => {
-                console.log("failed")
+                document.location.reload();
                 props.history.push('/login');
             })
     }
