@@ -29,6 +29,17 @@ export default class Helppage extends Component {
         this.setState({restaurantToShow : restaurantsOfChoice[randNum]})
         
     }
+    highRateClicked = () => {
+        let restaurantsOfChoice = []
+        this.props.data.map(restaurant => {
+            if(restaurant.rating > 4){
+                restaurantsOfChoice.push(restaurant)
+            }
+        })
+
+        let randNum = Math.floor((Math.random() * restaurantsOfChoice.length));
+        this.setState({restaurantToShow : restaurantsOfChoice[randNum]})
+    }
 
     render() {
         let output
@@ -59,8 +70,9 @@ export default class Helppage extends Component {
                     <h1>Hungry? Desparate? Confused?</h1><br></br>
                     <h3>can't decide what to eat?</h3><br></br>
                     <h1>This page is for you!</h1><br></br>
-                    <button onClick={() => this.randomClicked()}>I want something!</button>
+                    <button onClick={() => this.highRateClicked()}>I want high class!</button>
                     <button onClick={() => this.borgarsClicked()}>I want borgars!</button>
+                    <button onClick={() => this.randomClicked()}>I want something!</button>
                     {output}
                 </div>
             </div>

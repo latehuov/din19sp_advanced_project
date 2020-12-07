@@ -76,7 +76,7 @@ export default class DBline extends Component {
                     this.state.displayInfo == true &&
                     <div className="restImage">
 
-                        <p className="restInfo">{this.props.item.type_res}</p>
+                        
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
                         <div className="ratingButtons">
                             <button className="imgButton" onClick={()=>this.Clicked()}>1</button>
