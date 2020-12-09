@@ -40,7 +40,7 @@ values
 
 
 --------------
-alter table restaurants 
+alter table restaurants
 add column desc_rest varchar(255);
 
 update restaurants
@@ -81,9 +81,9 @@ insert comments with
 insert into public.comments(id_restaurant, parent, children, comment)
 values(id_restaurant, parent of parent / NULL , NULL , comment);
 
-if child commet do also 
+if child commet do also
 
-update public.comments 
+update public.comments
 set children = children || ', ' || id_of_new_comment
 where id_comment = id_of_parent
 
@@ -102,12 +102,12 @@ values(1 , NULL ,'2, 3' , 'perkele'),
 
 create table public.ratings(
 	id_rating serial primary key,
-	id_restaurant INT, 
+	id_restaurant INT,
 	cookie varchar(255),
 	rating real
 );
 
-insert into public.ratings(id_restaurant, rating) 
+insert into public.ratings(id_restaurant, rating)
 values(1,5),
 	(2,3),
 	(3,2),
@@ -134,7 +134,7 @@ select restaurants.*, round(avg(rating)::numeric, 3) as rating from restaurants 
 
 ---------------------------------------
 
-chat table 
+chat table
 
 create table public.chat(
 	id_msg serial primary key,
@@ -154,3 +154,29 @@ create table public.users(
 
 
 insert into users (u_name, password) values ('admin', 'admin');
+
+
+----------------------------------
+
+
+magic formula top secret no touchy
+
+
+
+
+CREATE FUNCTION addRating(id_restaurant, cookie, rating) CALLED ON NULL INPUT
+DECLARE
+	id integer := id_restaurant,
+	user varchar(255) := cookie,
+	rate double precision := rating
+BEGIN
+	SELECT * FROM ratings WHERE id_restaurant = id AND cookie = user;
+
+	IF not found THEN
+	INSERT INTO ratings (id_restaurant, cookie, rating) VALUES (id, user, rate);
+	ELSE
+	UPDATE TABLE ratings
+	SET rating = rate
+	WHERE cookie = user;
+	END IF;
+END;
