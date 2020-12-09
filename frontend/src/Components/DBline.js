@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
 var today = new Date()
 var hours = today.getHours()
 var minutes = today.getMinutes()

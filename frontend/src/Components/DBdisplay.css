@@ -38,6 +38,7 @@
 
 .a1:hover {
 	opacity: 0.8;
+	cursor: pointer;
 }
 
 .a1 > .restInfo, p {
