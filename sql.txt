@@ -159,24 +159,17 @@ insert into users (u_name, password) values ('admin', 'admin');
 ----------------------------------
 
 
-magic formula top secret no touchy
+magic formula top secret no touch
 
-
-
-
-CREATE FUNCTION addRating(id_restaurant, cookie, rating) CALLED ON NULL INPUT
-DECLARE
-	id integer := id_restaurant,
-	user varchar(255) := cookie,
-	rate double precision := rating
+CREATE OR REPLACE FUNCTION addRating(id integer, bastard varchar(255), rate double precision) RETURNS VOID
+AS $$
 BEGIN
-	SELECT * FROM ratings WHERE id_restaurant = id AND cookie = user;
-
-	IF not found THEN
-	INSERT INTO ratings (id_restaurant, cookie, rating) VALUES (id, user, rate);
+	IF EXISTS ( SELECT id_restaurant, cookie from ratings where id_restaurant = $1 and cookie = $2) THEN
+	UPDATE ratings
+	SET rating = $3
+	WHERE id_restaurant = $1 AND cookie = $2;
 	ELSE
-	UPDATE TABLE ratings
-	SET rating = rate
-	WHERE cookie = user;
+	INSERT INTO ratings (id_restaurant, cookie, rating) VALUES ($1,$2,$3);
 	END IF;
 END;
+$$ LANGUAGE plpgsql;
