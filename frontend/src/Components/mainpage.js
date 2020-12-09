@@ -23,7 +23,7 @@ export default class Mainpage extends Component {
                 </div>
                 <br></br>
                 <DBdisplay
-                    userId={this.props.userId}
+                    username={this.props.username}
                     data={this.props.data}
                     setSearchResult={this.props.setSearchResult}
                     SearchResult={this.props.SearchResult} />
