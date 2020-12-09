@@ -1,7 +1,16 @@
-.contentbox{
+.contentbox {
     width: 90%;
     margin: auto;
     background-color: #31001e;
     text-align: center;
     color: ivory;
+}
+
+.contentbox > button {
+    width: auto;
+}
+
+.contentbox img {
+ width: 50%;
+ height: auto;
 }

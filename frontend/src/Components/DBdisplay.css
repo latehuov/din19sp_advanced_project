@@ -3,6 +3,9 @@
 }
 
 .searchbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	width: 230px;
 	position: relative;
 	padding: 15px;
@@ -14,6 +17,11 @@
 
 .searchinput {
 		margin: auto;
+}
+
+.searchbox > button {
+	margin: 5px 0 0 0;
+	width: auto;
 }
 
 .a1 {
@@ -32,10 +40,11 @@
 	opacity: 0.8;
 }
 
-p, .a1 > .restInfo {
+.a1 > .restInfo, p {
     text-align: center;
     color: ivory;
-    margin: 10px;
+		margin: 10px;
+		user-select: none;
 }
 
 .restDescription {
@@ -57,7 +66,7 @@ p, .a1 > .restInfo {
 	height: auto;
 }
 
-img {
+.ratingButtons > img {
 	width: 100%;
 	height: auto;
 }
