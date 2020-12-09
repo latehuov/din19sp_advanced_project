@@ -1,24 +1,25 @@
 
 
-.contentbox{
+.contentbox {
     width:95%;
     margin: auto;
 }
 
-.menu{
-    border: black solid 2px;
-    width: 29%;
-    height: 550px;
-    float: left;
-}
-.map{
-    border: black solid 2px;
-    display: inline-block;
-    margin-left: 5%;
-    width: 65%;
-    height: 550px;
+.menu {
+	background-color: rgb(129, 0, 39);
+	width: 29%;
+	height: 550px;
+	float: left;
+	margin: 50px auto;
 }
 
-p{
+.map {
+	display: inline-block;
+	margin: 50px 0 0 5%;
+	width: 65%;
+	height: 550px;
+}
+
+p {
     color:ivory
 }
