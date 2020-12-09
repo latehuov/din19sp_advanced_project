@@ -17,12 +17,13 @@ export default class Mainpage extends Component {
         return (
             <div class="mainDisplay">
                 <Header
-                    history={this.props.history}  username={this.props.username} setUsername={this.props.setUsername}/>
+                    history={this.props.history} username={this.props.username} setUsername={this.props.setUsername} />
                 <div id="NoelleBox">
                     <img id="Noelle" src={pic} alt="aaa"></img>
                 </div>
                 <br></br>
                 <DBdisplay
+                    getNewData={this.props.getNewData}
                     username={this.props.username}
                     data={this.props.data}
                     setSearchResult={this.props.setSearchResult}

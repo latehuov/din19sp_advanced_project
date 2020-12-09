@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 var today = new Date()
 var hours = today.getHours()
@@ -47,6 +48,20 @@ export default class DBline extends Component {
     }
 
     ratingButtonClicked = (rating) => {
+        axios.post('http://localhost:4000/ratings', {
+            id_restaurant: this.props.item.id_restaurant,
+            cookie: this.props.username,
+            rating: rating
+        }
+        )
+            .then(response => {
+                console.log(response)
+                this.props.getNewData()
+            })
+            .catch((err) => {
+
+                console.log(err)
+            })
 
     }
 

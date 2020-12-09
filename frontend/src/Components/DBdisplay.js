@@ -68,14 +68,15 @@ export default class DBdisplay extends Component {
             <div className={styles.dataBox}>
                 <div className="searchbox">
                     <span>Search:</span><input className="searchinput" type="text" onChange={this.search}></input>
-                     <button onClick={()=>this.buttonFilter("5.")} >Give me da best!</button>
-                    <button onClick={()=>this.buttonFilter("burger")} >Give me borgars!</button>
-                    <button onClick={()=>this.buttonFilter()} >Give me everything!</button>
+                    <button onClick={() => this.buttonFilter("5.")} >Give me da best!</button>
+                    <button onClick={() => this.buttonFilter("burger")} >Give me borgars!</button>
+                    <button onClick={() => this.buttonFilter()} >Give me everything!</button>
                 </div>
 
                 {
                     this.props.SearchResult.map(item =>
                         <DBline
+                            getNewData={this.props.getNewData}
                             username={this.props.username}
                             item={item}
                         />

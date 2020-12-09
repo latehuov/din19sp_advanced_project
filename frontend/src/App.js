@@ -38,10 +38,7 @@ class App extends Component {
     this.setState({ username: value })
   }
 
-
-
-
-  componentDidMount() {
+  getNewData = () => {
     axios.get('http://localhost:4000/restaurants')
 
 
@@ -57,11 +54,19 @@ class App extends Component {
 
 
 
+  componentDidMount() {
+    this.getNewData()
+  }
+
+
+
+
   render() {
     return (
       <Router  >
         <Route path="/" exact render={(routeProps) =>
           <Mainpage
+            getNewData={this.getNewData}
             userId={this.state.userId}
             data={this.state.data}
             SearchResult={this.state.SearchResult}
