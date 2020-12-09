@@ -5,6 +5,11 @@
     margin: auto;
 }
 
+.contentbox img {
+	width: 100%;
+	height: auto;
+ } 
+
 .menu {
 	background-color: rgb(129, 0, 39);
 	width: 29%;
