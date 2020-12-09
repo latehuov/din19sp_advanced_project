@@ -38,7 +38,7 @@ p {
 }
 
 
-button {
+.logincontainer > button {
     width: 100%;
     margin:  auto;
   }

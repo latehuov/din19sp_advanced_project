@@ -1,8 +1,9 @@
 .header {
     height: 50px;
+    width: 100%;
     background: rgb(129, 0, 39);
     color: ivory;
-    border-radius: 0 0 5px 0;
+    border-radius: 0 0 5px 5px;
     text-align: center;
     }
 
@@ -13,8 +14,7 @@
     
     h2 {
         display: inline-block;
-        margin-left: 15px;
-        margin-right: 15px;
+        margin: auto 5%;
         user-select: none;
     }
 

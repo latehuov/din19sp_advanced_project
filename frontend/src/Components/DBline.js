@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 var today = new Date()
 var hours = today.getHours()
@@ -46,8 +47,22 @@ export default class DBline extends Component {
         }
     }
 
-    Clicked = () =>{
-        console.log(this.props.userId)
+    ratingButtonClicked = (rating) => {
+        axios.post('http://localhost:4000/ratings', {
+            id_restaurant: this.props.item.id_restaurant,
+            cookie: this.props.username,
+            rating: rating
+        }
+        )
+            .then(response => {
+                console.log(response)
+                this.props.getNewData()
+            })
+            .catch((err) => {
+
+                console.log(err)
+            })
+
     }
 
     setDisplayInfo = (value) => {
@@ -64,6 +79,19 @@ export default class DBline extends Component {
     }
 
     render() {
+        let ratingButtons
+        if (this.props.username != null) {
+            ratingButtons = (
+                <div>
+                    <p>Rate this restaurant!</p>
+                    <button className="imgButton" onClick={() => this.ratingButtonClicked(1)}>1</button>
+                    <button className="imgButton" onClick={() => this.ratingButtonClicked(2)}>2</button>
+                    <button className="imgButton" onClick={() => this.ratingButtonClicked(3)}>3</button>
+                    <button className="imgButton" onClick={() => this.ratingButtonClicked(4)}>4</button>
+                    <button className="imgButton" onClick={() => this.ratingButtonClicked(5)}>5</button>
+                </div>
+            )
+        }
         return (
 
             <div className="a1" onClick={() => this.handleClick()}>
@@ -76,14 +104,10 @@ export default class DBline extends Component {
                     this.state.displayInfo == true &&
                     <div className="restImage">
 
-                        
+
                         <p id={this.props.item.id_restaurant} >{this.props.item.desc_rest}</p>
                         <div className="ratingButtons">
-                            <button className="imgButton" onClick={()=>this.Clicked()}>1</button>
-                            <button className="imgButton">2</button>
-                            <button className="imgButton">3</button>
-                            <button className="imgButton">4</button>
-                            <button className="imgButton">5</button>
+                            {ratingButtons}
                             <img src={`${process.env.PUBLIC_URL}/images/${this.props.item.name_res}.jpg`}></img>
                         </div>
                     </div>

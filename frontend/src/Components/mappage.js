@@ -39,13 +39,13 @@ export default class Mappage extends Component {
         return (
 
 
-            <div class="mainDisplay">
+            <div className="mainDisplay">
                 <Header history={this.props.history} username={this.props.username} setUsername={this.props.setUsername}/>
                 <div class="contentbox">
-                    <div class="menu">
+                    <div className="menu">
                         {output}
                     </div>
-                    <div class="map">
+                    <div className="map">
                         <MapContainer
                             data={this.props.data}
                             selectedRestaurant={this.props.selectedRestaurant}
