@@ -14,7 +14,7 @@ var ratings = {
     add: function (name_res, callback) {
         console.log(name_res);
         return db.query(
-            'insert into public.ratings(id_restaurant, cookie, rating) values($1,$2,$3)',
+            'select addRating($1, $2, $3);',
             [name_res.id_restaurant, name_res.cookie, name_res.rating],
             callback
         );
