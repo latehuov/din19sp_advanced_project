@@ -161,7 +161,7 @@ insert into users (u_name, password) values ('admin', 'admin');
 
 magic formula top secret no touch
 
-CREATE OR REPLACE FUNCTION addRating(id integer, bastard varchar(255), rate double precision) RETURNS VOID
+CREATE OR REPLACE FUNCTION addRating(id integer, bastard text, rate double precision) RETURNS VOID
 AS $$
 BEGIN
 	IF EXISTS ( SELECT id_restaurant, cookie from ratings where id_restaurant = $1 and cookie = $2) THEN
