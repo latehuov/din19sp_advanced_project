@@ -28,7 +28,6 @@ export default class Mainpage extends Component {
                     data={this.props.data}
                     setSearchResult={this.props.setSearchResult}
                     SearchResult={this.props.SearchResult} />
-                <img id="theGif" src={gif} alt="aaa"></img>
             </div>
         )
     }
