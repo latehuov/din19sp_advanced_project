@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   getNewData = () => {
-    axios.get('http://localhost:4000/restaurants')
+    axios.get('https://shrouded-hamlet-41001.herokuapp.com/restaurants')
 
 
       .then((response) => {

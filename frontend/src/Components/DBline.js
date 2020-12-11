@@ -47,7 +47,7 @@ export default class DBline extends Component {
     }
 
     ratingButtonClicked = (rating) => {
-        axios.post('http://localhost:4000/ratings', {
+        axios.post('https://shrouded-hamlet-41001.herokuapp.com/ratings', {
             id_restaurant: this.props.item.id_restaurant,
             cookie: this.props.username,
             rating: rating

@@ -19,7 +19,7 @@ function LoginPressed(props, state) {
 
     if (state == 0) {
         //login state
-        axios.post('http://localhost:4000/login', {
+        axios.post('https://shrouded-hamlet-41001.herokuapp.com/login', {
             username: userUser,
             password: userPassword
         }
@@ -39,7 +39,7 @@ function LoginPressed(props, state) {
     }
     else if (state == 1) {
         //register
-        axios.post('http://localhost:4000/register', {
+        axios.post('https://shrouded-hamlet-41001.herokuapp.com/register', {
             u_name: userUser,
             password: userPassword
         }
